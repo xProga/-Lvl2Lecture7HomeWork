@@ -1,0 +1,34 @@
+﻿<Window x:Class="Lvl2Lecture5HomeWork.EditDepartment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lvl2Lecture5HomeWork"
+        mc:Ignorable="d"
+        Title="Редактирование служб" Height="300" Width="447.245" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="liDepart" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ElementName=liDepart}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding NameDepartment}" HorizontalAlignment="Left"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <WrapPanel Grid.Row="1" Grid.Column="1" >
+            <TextBlock Text="Введите наименование нового департамента: " FontSize="12"/>
+            <TextBox Name="NewDepartmentTextBox" FontSize="12" Width="150"></TextBox>
+            <Button Name="SaveNewDepartment" Width="70" Content="Сохранить" FontSize="12" Click="SaveNewDepartment_Click"/>
+        </WrapPanel>
+        <Button Name="DeleteSelectedDepart" Grid.Column="2" Width="70" Height="20" FontSize="10" Content="Удалить" VerticalAlignment="Top" Click="DeleteSelectedDepart_Click"></Button>
+    </Grid>
+</Window>

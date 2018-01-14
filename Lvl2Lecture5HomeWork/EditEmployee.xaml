@@ -1,0 +1,51 @@
+﻿<Window x:Class="Lvl2Lecture5HomeWork.EditEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lvl2Lecture5HomeWork"
+        mc:Ignorable="d"
+        Title="Редактирование профилей сотрудников" Height="300" Width="465.393" Closing="Window_Closing">
+    <Grid Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Выберите сотрудника для редактирования" FontSize="10" TextWrapping="WrapWithOverflow"></TextBlock>
+        <ListBox Name="listEmployees" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ElementName=listEmployees}" SelectionChanged="listEmployees_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding LastName}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Column="1" Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Имя: " TextAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Text="Фамилия: " TextAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Text="Департамент:  " TextAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Name="FirstNameTextBox" Grid.Column="1" TextAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Name ="LastNameTextBox" Grid.Column="1" Grid.Row="1" TextAlignment="Left" VerticalAlignment="Center" />
+            <ComboBox Name="DepartmentComboBox" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" />
+        </Grid>
+        <Button Grid.Column="1" Grid.Row="2" Height="20" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Сохранить" Click="Button_Click" ></Button>
+    </Grid> 
+</Window>
