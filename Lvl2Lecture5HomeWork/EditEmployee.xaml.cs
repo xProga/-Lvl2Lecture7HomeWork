@@ -40,10 +40,12 @@ namespace Lvl2Lecture5HomeWork
                     var selectedEmployee = liEmp.Where(x => x.FirstName.Equals(firstName) && x.LastName.Equals(lastName)).FirstOrDefault();
                     selectedEmployee.Department.NameDepartment = (string)DepartmentComboBox.SelectedItem;
                     selectedEmployee.Property = "Change department";
+                    Employees.EditEmployeeDepartment(selectedEmployee, (string)DepartmentComboBox.SelectedItem);
                 }
                 else
                 {
-                    liEmp.Add(new Employees(FirstNameTextBox.Text, LastNameTextBox.Text, new Department { NameDepartment = DepartmentComboBox.SelectedItem.ToString() }));
+                    liEmp.Add(new Employees(firstName, lastName, new Department { NameDepartment = DepartmentComboBox.SelectedItem.ToString() }));
+                    Employees.CreateEmployee(firstName, lastName, DepartmentComboBox.SelectedItem.ToString());
                 }
                 MessageBox.Show("Изменения сохранены!", "Успешно!", MessageBoxButton.OK, MessageBoxImage.Information);
             }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Lvl2Lesson7DBModelContainer" CdmEntityContainer="Lvl2Lesson7DBEntities">
+    <EntitySetMapping Name="tbl_Departments">
+      <EntityTypeMapping TypeName="Lvl2Lesson7DBModel.tbl_Departments">
+        <MappingFragment StoreEntitySet="tbl_Departments">
+          <ScalarProperty Name="Name_Department" ColumnName="Name_Department" />
+          <ScalarProperty Name="ID_Departments" ColumnName="ID_Departments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employees">
+      <EntityTypeMapping TypeName="Lvl2Lesson7DBModel.tbl_Employees">
+        <MappingFragment StoreEntitySet="tbl_Employees">
+          <ScalarProperty Name="Code_Department" ColumnName="Code_Department" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ID_Employees" ColumnName="ID_Employees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

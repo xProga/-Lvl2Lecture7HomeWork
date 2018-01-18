@@ -79,12 +79,14 @@ namespace Lvl2Lecture5HomeWork
         private void SaveNewDepartment_Click(object sender, RoutedEventArgs e)
         {
             AddNewDepartment(NewDepartmentTextBox.Text);
+            Department.AddDepartment(NewDepartmentTextBox.Text);
             NewDepartmentTextBox.Text = string.Empty;
         }
 
         private void DeleteSelectedDepart_Click(object sender, RoutedEventArgs e)
         {
             DeleteSelectedDepartment(((Department)liDepart.SelectedValue).NameDepartment);
+            Department.DeleteDepartment((Department)liDepart.SelectedValue);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
