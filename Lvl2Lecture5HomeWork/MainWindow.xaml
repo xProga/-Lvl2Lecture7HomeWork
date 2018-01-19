@@ -38,17 +38,6 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        <!--<ListBox Name="lbEmployees" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding ElementName=lbEmployees}" SelectionChanged="lbEmployees_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding FirstName}"/>
-                        <TextBlock Text=" "/>
-                        <TextBlock Text="{Binding LastName}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
             <ListView Name="lbDepartment" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ElementName=lbEmployees, Mode=OneWay}" SelectionChanged="lbDepartment_SelectionChanged">
                 <ListView.View>
                     <GridView>
@@ -56,13 +45,6 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <!--<ListBox Name="lbDepartment" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ElementName=lbEmployees, Mode=OneWay}" SelectionChanged="lbDepartment_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Path=Department.NameDepartment, Mode=OneWay}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>-->
-            <!--</ListBox>-->
-    </Grid>
+        </Grid>
     </Grid>
 </Window>

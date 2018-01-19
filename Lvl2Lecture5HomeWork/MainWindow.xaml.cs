@@ -114,8 +114,8 @@ namespace Lvl2Lecture5HomeWork
         {
             using (Lvl2Lesson7DBEntities db = new Lvl2Lesson7DBEntities())
             {
-                var editEmp = db.tbl_Employees.Where(x => x.First_Name.Equals(emp.FirstName) && x.Last_Name.Equals(emp.LastName)).FirstOrDefault();
-                editEmp.Code_Department = db.tbl_Departments.Where(x => x.Name_Department.Equals(newDepartment)).FirstOrDefault().ID_Departments;
+                db.tbl_Employees.Where(x => x.First_Name.Equals(emp.FirstName) && x.Last_Name.Equals(emp.LastName))
+                    .FirstOrDefault().Code_Department = db.tbl_Departments.Where(x => x.Name_Department.Equals(newDepartment)).FirstOrDefault().ID_Departments;
                 db.SaveChanges();
             }
         }
